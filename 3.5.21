@@ -1,0 +1,53 @@
+import random, time
+
+#It's fine to have long variable names, you want to make sure your code
+# easy to read/understand
+
+
+# I would call this options or choices
+cpu = ['rock', 'paper', 'scissor']
+
+print("Welcome to the game of rock, paper, scissor!")
+#I would call this userChoice or userPick
+consumer = str.lower(input("Which one are you going to choose? "))
+
+
+# turn this into a loop(ask if you need help)
+time.sleep(0.5)
+print("Let's see who wins...")
+time.sleep(1.5)
+print("Rock!")
+time.sleep(1.5)
+print("Paper!")
+time.sleep(1.5)
+print("Scissor!")
+
+#I would call this computerChoice or cpuChoice
+comp = random.choice(cpu)
+
+time.sleep(1)
+print('The computer chose ' + comp + '!')
+
+if (consumer == comp):
+    print("That's a tie!")
+
+#You win!
+elif comp ==  cpu[0] and consumer == cpu[1]:
+    print("You win!")
+elif comp == cpu[1] and consumer == cpu[2]:
+    print("You win!")
+elif comp == cpu[2] and consumer == cpu[0]:
+    print("You win!")
+
+#You lose:(
+elif comp == cpu[0] and consumer == cpu[2]:
+    print("You lose:(")
+elif comp == cpu[1] and consumer == cpu[0]:
+    print("You lose:(")
+elif comp == cpu[2] and consumer == cpu[1]:
+    print("You lose:(")
+
+
+# Can you work out a way to get fewer if/elif statements
+# Can you make a way of being able to replay the game
+# Can you add a check to see if someone made a typo in their input
